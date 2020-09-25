@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShrinkIt</title>
+    <style>
+      #drop-area {
+        border: 2px dashed #ccc;
+        border-radius: 20px;
+        width: 480px;
+        font-family: sans-serif;
+        margin: 100px auto;
+        padding: 20px;
+      }
+      #drop-area.highlight {
+        border-color: purple;
+      }
+      p {
+        margin-top: 0;
+      }
+      .my-form {
+        margin-bottom: 10px;
+      }
+      #gallery {
+        margin-top: 10px;
+      }
+      #gallery img {
+        width: 150px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px;
+        background: #ccc;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      .button:hover {
+        background: #ddd;
+      }
+      #fileElem {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="drop-area">
+      <form action="" class="my-form">
+        <p>Upload your files here. You can also drag and drop</p>
+        <input
+          name="file"
+          type="file"
+          id="fileElem"
+          multiple
+          accept="*"
+          onchange="handleFiles(this.files)"
+        />
+        <label class="button" for="fileElem">Select</label>
+      </form>
+      <progress id="progress-bar" max="100" value="0"></progress>
+      <div id="gallery"></div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
